@@ -5,8 +5,6 @@ import Auth from "./components/Auth.js/Auth";
 import Cart from "./components/Cart.js/Cart";
 import Menu from "./components/Menu.js/Menu"
 
-import "./App.css";
-
 const App = () => {
   return (
     <div className="App-container">

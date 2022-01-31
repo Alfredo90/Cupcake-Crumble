@@ -1,14 +1,8 @@
-import React from 'react';
+const CartList = ({item: {img, price, quantity, title}}) => (
+  <li>
+    <img src={img} alt={title} />
+    <p>${price}</p>
+  </li>
+)
 
-const CartList = ({item: {img, price, quantity, title}}) => {
-
-
-  return (
-      <li>
-
-      </li>
-  )
-
-};
-
-export default CartList;
+export default CartList
