@@ -1,7 +1,8 @@
 module.exports = {
-    getCupcakesToCart: async (req, res) => {
+    getCart: async (req, res) => {
         const db = req.app.get('db')
-        const {user_id} = req.session.user
+        console.log('SESSION', req.session)
+        const { user_id } = req.session.user
         const cart = await db.get_cart(user_id)
         res.status(200).send(cart)
     },

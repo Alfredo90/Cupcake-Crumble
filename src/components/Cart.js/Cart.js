@@ -6,11 +6,8 @@ const Cart = () => {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("/cart")
-      .then(({ data }) => {
-        setCart(data);
-      })
+    axios.get("/cart")
+      .then(({ data }) => setCart(data))
       .catch(console.error);
   }, []);
 
