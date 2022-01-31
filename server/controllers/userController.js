@@ -12,13 +12,9 @@ module.exports = {
     const hash = bcrypt.hashSync(password, salt);
     const [newUser] = await db.add_user([email, username, hash]);
   
-    delete newUser.password
-    req.session.user = newUser
-    // req.session.user = {
-    //   userId: newUser.user_id,
-    //   email: newUser.email,
-    //   username: newUser.username,
-    // };
+    delete newUser.password;
+    req.session.user = newUser;
+
     res.status(200).send(req.session.user);
   },
   login: async (req, res) => {
@@ -27,12 +23,11 @@ module.exports = {
     const [foundUser] = await db.check_user(email);
     if (!foundUser) return res.status(401).send("Incorrect login information");
 
-    const authenticated = bcrypt.compareSync(password, foundUser.password)
+    const authenticated = bcrypt.compareSync(password, foundUser.password);
     if (authenticated) {
-      delete foundUser.password
-      req.session.user = foundUser
-      
-      console.log(req.session.user)
+      delete foundUser.password;
+      req.session.user = foundUser;
+
       res.status(200).send(req.session.user);
     } else {
       res.status(401).send("Incorrect login information");
