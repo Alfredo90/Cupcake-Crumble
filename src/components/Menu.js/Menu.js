@@ -17,12 +17,28 @@ const Menu = () => {
       .catch(setError);
   }, []);
 
+  const addToCart = (cupcakeId) => {
+    console.log(cupcakeId)
+    axios
+    .post(`/cart/${cupcakeId}`)
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }
+
+
+
+
   return (
     <ul className="flex flex-row flex-wrap ">
       {products.map(cupcake => (
         <MenuCard
           key={cupcake.cupcake_id}
           cupcake={cupcake}
+          addToCart={addToCart}
         />
       ))}
     </ul>

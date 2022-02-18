@@ -1,5 +1,6 @@
 
-const MenuCard = ({ cupcake: { img, title, description, price } }) => {
+const MenuCard = ({ cupcake: {cupcake_id, img, title, description, price }, addToCart }) => {
+  const addToCartHandler = () => addToCart(cupcake_id);
   return (
     <li className="flex flex-col items-center justify-center m-20 mx-auto bg-gray-300  w-384 h-400 rounded-xl">
       <img
@@ -14,7 +15,7 @@ const MenuCard = ({ cupcake: { img, title, description, price } }) => {
         </div>
         <p className="p-10 tracking-tighter">{description}</p>
         <div className="flex items-center justify-end">
-          <button>Add cart</button>
+          <button type="button" onClick={addToCartHandler} >Add To Cart</button>
         </div>
       </div>
     </li>
