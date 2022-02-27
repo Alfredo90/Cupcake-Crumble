@@ -1,6 +1,6 @@
-import { useState } from "react"
-const CartList = ({cart_id, img, price, quantity, title, deleteItemFromCart, updateCupcakeQuantity, cupcake_id}) => {
-  
+import { useState } from 'react'
+
+const CartItem = ({cart_id, img, price, quantity, title, deleteItemFromCart, updateCupcakeQuantity}) => {
   const [selectTagValue, setSelectTagValue] = useState(quantity)
 
   const quantityArr = Array.from(Array(10).keys()).map(num => ({
@@ -12,17 +12,17 @@ const CartList = ({cart_id, img, price, quantity, title, deleteItemFromCart, upd
     const quantity = e.target.value
 
     setSelectTagValue(quantity)
-    updateCupcakeQuantity(quantity, cupcake_id)
+    updateCupcakeQuantity(cart_id, quantity)
   }
 
   return (
     <li>
       <img src={img} alt={title} />
-      <p>${price}</p>
+      <p>${price * quantity}</p>
       <input type="button" onClick={deleteItemFromCart.bind(null, cart_id)} value="Remove" />
       <div>
         <label htmlFor="quantity">Qty:</label>
-        <select id="quantity"  defaultValue={selectTagValue} onChange={quantityHandler}>
+        <select id="quantity" defaultValue={selectTagValue} onChange={quantityHandler}>
           {quantityArr.map(({key, optionQuantity}) => (
             <option key={key} value={optionQuantity}>
               {optionQuantity}
@@ -31,5 +31,7 @@ const CartList = ({cart_id, img, price, quantity, title, deleteItemFromCart, upd
         </select>
       </div>
     </li>
-  )}
-export default CartList;
+  )
+}
+
+export default CartItem

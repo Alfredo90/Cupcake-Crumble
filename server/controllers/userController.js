@@ -20,6 +20,7 @@ module.exports = {
   login: async (req, res) => {
     const db = req.app.get("db");
     const { email, password } = req.body;
+
     const [foundUser] = await db.check_user(email);
     if (!foundUser) return res.status(401).send("Incorrect login information");
 

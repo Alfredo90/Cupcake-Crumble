@@ -41,8 +41,8 @@ app.get('/cupcakes', getAllCupcakes)
 //* CART ENDPOINTS
 app.get('/cart', checkSession, getCart)
 app.post('/cart/:cupcakeId', checkSession, addCupcakeToCart)
-app.put('/cart/:cupcakeId', checkSession, updateQuantityFromCart)
-app.delete('/cart/:cartItemId', checkSession, deleteCupcakeFromCart)
+app.put('/cart/:cartId', checkSession, updateQuantityFromCart)
+app.delete('/cart/:cartId', checkSession, deleteCupcakeFromCart)
 
 
 //* nodemon listens for changes
