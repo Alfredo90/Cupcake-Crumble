@@ -6,7 +6,7 @@ const massive = require('massive')
 const { checkSession } = require('./middleware')
 const { register, login, logout, getUserSession } =  require('./controllers/userController')
 const { getAllCupcakes } = require('./controllers/productController')
-const { getCart, addCupcakeToCart, deleteCupcakeFromCart } = require('./controllers/cartController')
+const { getCart, addCupcakeToCart, deleteCupcakeFromCart, updateQuantityFromCart } = require('./controllers/cartController')
 
 const { SESSION_SECRET, SERVER_PORT, CONNECTION_STRING } = process.env
 const app = express()
@@ -41,7 +41,7 @@ app.get('/cupcakes', getAllCupcakes)
 //* CART ENDPOINTS
 app.get('/cart', checkSession, getCart)
 app.post('/cart/:cupcakeId', checkSession, addCupcakeToCart)
-// app.put('/cart/:cupcakeId')
+app.put('/cart/:cupcakeId', checkSession, updateQuantityFromCart)
 app.delete('/cart/:cartItemId', checkSession, deleteCupcakeFromCart)
 
 

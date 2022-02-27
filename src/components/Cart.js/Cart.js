@@ -2,18 +2,34 @@ import { useState, useEffect } from "react";
 import CartList from "./CartList";
 import axios from "axios";
 
+
 const Cart = () => {
   const [cart, setCart] = useState([]);
-
+ 
+  
   useEffect(() => {
     axios
       .get("/cart")
-      .then(({ data }) => setCart(data))
+      .then(({ data }) => {
+        console.log(data)
+        setCart(data)
+      })
       .catch(console.error);
   }, []);
 
+  const updateCupcakeQuantity = (quantity, cupcakeId ) => {
+    axios
+      .put(`/cart/${cupcakeId}`, {quantity})
+      .then(({data}) => {
+        console.log(data)
+        setCart(data)
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    }
+
   const deleteItemFromCart = cartItemId => {
-    // console.log(cupcakeId)
     axios
     .delete(`/cart/${cartItemId}`)
     .then((res) => {
@@ -31,6 +47,7 @@ const Cart = () => {
         key={props.cart_id} 
         {...props}
         deleteItemFromCart={deleteItemFromCart}
+        updateCupcakeQuantity={updateCupcakeQuantity}
          />
       ))}
     </ul>
