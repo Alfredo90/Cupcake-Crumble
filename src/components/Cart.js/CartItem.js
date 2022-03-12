@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
+
 const CartItem = ({cart_id, img, price, quantity, title, deleteItemFromCart, updateCupcakeQuantity}) => {
   const [selectTagValue, setSelectTagValue] = useState(quantity)
-
   const quantityArr = Array.from(Array(10).keys()).map(num => ({
     key: `cupcakeQuantity:${num}`,
     optionQuantity: num + 1
@@ -17,7 +17,7 @@ const CartItem = ({cart_id, img, price, quantity, title, deleteItemFromCart, upd
 
   return (
     <li>
-      <img src={img} alt={title} />
+      <img src={img} alt={title} className="w-100 h-100" />
       <p>${price * quantity}</p>
       <input type="button" onClick={deleteItemFromCart.bind(null, cart_id)} value="Remove" />
       <div>

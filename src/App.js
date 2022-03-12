@@ -4,18 +4,20 @@ import Main from "./components/Main.js/Main";
 import Auth from "./components/Auth.js/Auth";
 import Cart from "./components/Cart.js/Cart";
 import Menu from "./components/Menu.js/Menu"
+import Checkout from "./components/Checkout.js/Checkout";
+
+
 
 const App = () => {
   return (
     <div className="App-container">
       <Navbar />
-      {/* <Menu/> */}
-      {/* <Main/> */}
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/auth" element={<Auth />} />
-        <Route path="/cart" element={<Cart />} />
         <Route path="/menu" element={<Menu />} />
+        <Route path="/cart" element={<Cart/>} />
+        <Route path="/checkout" element={<Checkout/>} />
       </Routes>
     </div>
   );
