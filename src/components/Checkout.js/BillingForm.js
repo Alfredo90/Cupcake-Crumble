@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import {Link} from 'react-router-dom'
 
 const BillingForm = () => {
   const [billingValues, setBillingValues] = useState({
@@ -10,6 +11,10 @@ const BillingForm = () => {
     usState: "",
     zipCode: "",
   });
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
 
   const usStates = useMemo(() => [
     "AK", "AL", "AR", "AS", "AZ", "CA", "CO", "CT", "DC", 
@@ -23,40 +28,41 @@ const BillingForm = () => {
 
   const billingHandler = e => setBillingValues({...billingValues, [e.target.name]: e.target.value})
   return(
-    <form>
+    <form onSubmit={handleSubmit} className="flex align-items justify-content">
             <fieldset>
                 <legend>Billing</legend>
                 <label>
                     First Name
-                    <input type="text" name="firstName" value={billingValues} required autoComplete="given-name" onChange={billingHandler}/>
+                    <input type="text" name="firstName"  required autoComplete="given-name" onChange={billingHandler}/>
                 </label>
                 <label>
                     Last Name
-                    <input type="text" name="lastName" value={billingValues} required autoComplete="family-name" onChange={billingHandler}/>
+                    <input type="text" name="lastName"  required autoComplete="family-name" onChange={billingHandler}/>
                 </label>
                 <label>
                     Address
-                    <input type="text" name="address" value={billingValues} required autoComplete="shipping street-address" onChange={billingHandler}/>
+                    <input type="text" name="address"  required autoComplete="shipping street-address" onChange={billingHandler}/>
                 </label>
                 <label>
                     Apt/Suite (optional)
-                    <input type="text" name="aptNum" value={billingValues}  onChange={billingHandler}/>
+                    <input type="text" name="aptNum"   onChange={billingHandler}/>
                 </label>
                 <label>
                     City
-                    <input type="text" name="city" value={billingValues} required autoComplete="shipping locality" onChange={billingHandler}/>
+                    <input type="text" name="city"  required autoComplete="shipping locality" onChange={billingHandler}/>
                 </label>
                 <label>
                     State
-                    <input type="text" list="us-state" name="usState" value={billingValues} required autoComplete="shipping region" onChange={billingHandler}/>
+                    <input type="text" list="us-state" name="usState"  required autoComplete="shipping region" onChange={billingHandler}/>
                     <datalist id="us-state">
                         {usStates.map(usState => <option key={usState}value={usState}/>)}
                     </datalist>
                 </label>
                 <label>
                     Zip Code
-                    <input type="text" name="zipCode" value={billingValues} required autoComplete="shipping postal-code" onChange={billingHandler}/>
+                    <input type="text" name="zipCode"  required autoComplete="shipping postal-code" onChange={billingHandler}/>
                 </label>
+                <Link to="/checkout"><button>Submit</button></Link>
             </fieldset>
         </form>
   )

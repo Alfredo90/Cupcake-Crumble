@@ -6,9 +6,9 @@ const Main = () => {
     {id:2, imageUrl:'https://images.unsplash.com/photo-1551893132-13b98b83cb44?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80', title: "Service"},
 ]
   return (
-    <div className=" border" >
+    <div className=" border flex flex-col justify-content align-items w-full h-full" >
       {images.map(({id, imageUrl, title}) => (
-      <img key={id} src={imageUrl} alt={imageUrl}></img>
+      <img key={id} src={imageUrl} alt={imageUrl} className='w-full h-full'></img>
       ))}
       <button >Shop Now</button>
       

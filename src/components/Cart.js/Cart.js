@@ -37,7 +37,7 @@ const Cart = () => {
           {...props}
         />
       ))}
-      <Link to="/checkout"><button>Checkout</button></Link>
+      <Link to="/billingForm"><button>Checkout</button></Link>
     </ul>
   );
 };
