@@ -35,12 +35,14 @@ const values  = {
   "256": "256px",
   "262": "262px",
   "300": "300px",
+  "335": "335px",
   "338": "338px",
   "350": "350px",
   "384": "384px",
   "400": "400px",
   "420": "420px",
   "480": "480px",
+  "500": "500px",
   "513": "513px",
   "560": "560px",
   "640": "640px",
@@ -67,21 +69,24 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
       black: colors.black,
+      slate: colors.slate,
       white: colors.white,
       gray: colors.gray,
       green: colors.emerald,
+      blue: colors.blue,
+      cyan: colors.cyan,
       indigo: colors.indigo,
       yellow: colors.yellow,
-      purple: colors.violet,
+      violet: colors.violet,
+      purple: colors.purple,
       pink: colors.fuchsia,
+      rose: colors.rose
     },
     extend: {
       fontFamily: {
         'proxima-nova': ["Proxima Nova"],
         'salt': ['Rock salt', 'cursive'], 
-        'lily': ['Lily Script One', 'cursive']
-        
-                       
+        'lily': ['Lily Script One', 'cursive']               
       },
       width: values,
       height: values,
@@ -95,6 +100,12 @@ module.exports = {
       spacing: values,
       fontSize:values
     },
+    backgroundImage: {
+      'pic-one': "url('/src/assets/pics/pictureone.jpg')",
+      'pic-two': "url('/src/assets/pics/picturetwo.jpg')",
+      'pic-three': "url('/src/assets/pics/picturethree.jpg')",
+
+    }
    
   },
   variants: {

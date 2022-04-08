@@ -1,11 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectIsNewUser } from "../../redux/slices/userSlice";
 
-const AuthInput = ({
-  inputData: { label, type, name, placeholder },
-  userInfo,
-  setUserInfo,
-}) => {
+const AuthInput = ({ inputData: { label, type, name, placeholder },userInfo,setUserInfo,}) => {
   const isNewUser = useSelector(selectIsNewUser);
   const isNewPassword = isNewUser ? "new" : "current";
   const nameFixed = name ? name : type;

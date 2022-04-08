@@ -14,8 +14,6 @@ const App = () => {
   return (
     <div className="App-container">
       <Navbar />
-     
-
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/auth" element={<Auth />} />
@@ -29,3 +27,5 @@ const App = () => {
 };
 
 export default App;
+     
+

@@ -1,17 +1,38 @@
-
+import { Link } from "react-router-dom";
 const Main = () => {
-  const images = [
-    {id:0, imageUrl: "https://images.unsplash.com/photo-1586985290301-8db40143d525?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",},
-    {id:1, imageUrl:'https://images.unsplash.com/photo-1582760999860-bc6c933093da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80', title:" About"},
-    {id:2, imageUrl:'https://images.unsplash.com/photo-1551893132-13b98b83cb44?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80', title: "Service"},
-]
   return (
-    <div className=" border flex flex-col justify-content align-items w-full h-full" >
-      {images.map(({id, imageUrl, title}) => (
-      <img key={id} src={imageUrl} alt={imageUrl} className='w-full h-full'></img>
-      ))}
-      <button >Shop Now</button>
-      
+    <div className=" w-full h-full flex flex-col justify-content align-items gap-10 ">
+      <div className="bg-pic-one w-full h-675 bg-cover">
+        <Link to="/menu">
+          <button className="flex justify-center p-8 align-items mx-auto mt-338 text-gray-200 text-xl border-2 bg-rose-300 hover:bg-rose-400 font-proxima-nova rounded-md  ">
+            Shop Now
+          </button>
+        </Link>
+      </div>
+      <div className="bg-pic-two w-full h-675 bg-cover ">
+        <h1 className="text-white">About</h1>
+        <p className="text-white">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed dolor
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+      <div className="bg-pic-three w-full h-675 bg-cover ">
+      <h1 className="text-white ">Service</h1>
+      <p className="text-white flex justify-center items-center ">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed dolor
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
     </div>
   );
 };

@@ -6,8 +6,9 @@ const Menu = () => {
   const [products, setProduct] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-
+//making an api request to retrieve data for products
   useEffect(() => {
+    setIsLoading(true)
     axios
       .get('/cupcakes')
       .then(({ data }) => {
@@ -16,7 +17,7 @@ const Menu = () => {
       })
       .catch(setError);
   }, []);
-
+  //Create a function making a api request to add item to user's cart
   const addToCart = (cupcakeId) => {
     console.log(cupcakeId)
     axios
@@ -28,21 +29,21 @@ const Menu = () => {
       console.log(err);
     });
   }
+  //Mapping products and passing props to MenuCard component.
+    return (
+      <ul className="flex flex-row flex-wrap justify-center items-center ">
+        {products.map(cupcake => (
+          <MenuCard
+            key={cupcake.cupcake_id}
+            cupcake={cupcake}
+            addToCart={addToCart}
+          />
+        ))}
+      </ul>
+    );
+  };
+  
+  export default Menu;
 
 
 
-
-  return (
-    <ul className="flex flex-row flex-wrap ">
-      {products.map(cupcake => (
-        <MenuCard
-          key={cupcake.cupcake_id}
-          cupcake={cupcake}
-          addToCart={addToCart}
-        />
-      ))}
-    </ul>
-  );
-};
-
-export default Menu;
