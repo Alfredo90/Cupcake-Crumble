@@ -31,7 +31,7 @@ const Menu = () => {
   }
   //Mapping products and passing props to MenuCard component.
     return (
-      <ul className="flex flex-row flex-wrap justify-center items-center ">
+      <ul className="flex flex-row flex-wrap justify-center items-center   ">
         {products.map(cupcake => (
           <MenuCard
             key={cupcake.cupcake_id}

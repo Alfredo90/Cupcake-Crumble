@@ -4,7 +4,7 @@ const Main = () => {
     <div className=" w-full h-full flex flex-col justify-content align-items gap-10 ">
       <div className="bg-pic-one w-full h-675 bg-cover">
         <Link to="/menu">
-          <button className="flex justify-center p-8 align-items mx-auto mt-338 text-gray-200 text-xl border-2 bg-rose-300 hover:bg-rose-400 font-proxima-nova rounded-md  ">
+          <button className="flex justify-center p-8 align-items mx-auto mt-338 text-white text-xl border-2 bg-orange-400 hover:bg-orange-300 font-proxima-nova rounded-md font-semibold  ">
             Shop Now
           </button>
         </Link>

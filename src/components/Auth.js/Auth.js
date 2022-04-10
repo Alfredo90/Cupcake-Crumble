@@ -32,15 +32,15 @@ const Auth = () => {
     dispatch(login(userInfo));
     setUserInfo({ username: "", email: "", password: "" });
   };
-  const logoutUser = () => {
-    dispatch(logout());
-  };
+  // const logoutUser = () => {
+  //   dispatch(logout());
+  // };
 
   return (
 
-      <div className="items-center justify-center flex flex-row h-100vh w-100wh mx-0 ">
-        <fieldset className="border p-3 w-300 h-300 flex flex-col justify-center items-center bg-green  ">
-          <legend>{isNewUser ? "Signup" : "Login"}</legend>
+      <div className="items-center justify-center flex flex-row  h-100vh w-100wh mx-auto  ">
+        <fieldset className="border-2 border-gray-300  rounded-2xl p-3 w-400 h-400 flex flex-col justify-center items-center shadow-xl  ">
+          <legend className="text-black font-medium text-32  font-proxima-nova ">{isNewUser ? "Signup" : "Login"}</legend>
           <form onSubmit={submitHandler}>
             {inputsToMap.map((inputData) => (
               <AuthInput
@@ -50,17 +50,20 @@ const Auth = () => {
                 setUserInfo={setUserInfo}
               />
             ))}
-            <div>
+            <div className="flex justify-between items-center my-30  ">
               <input
                 type="button"
                 value={ isNewUser ? "Already have an account?" : "Need an account?" }
                 onClick={toggleIsNewUser}
-                className="bg-green"
+                className=" font-medium hover:text-teal-600"
               />
-              <button type="submit">{isNewUser ? "Signup" : "Login"}</button>
-              <button type="button" onClick={logoutUser}>
+              <button 
+              type="submit"
+              className="font-medium border-2 text-white bg-teal-600 px-10 py-2 rounded-md"
+              >{isNewUser ? "Signup" : "Login"}</button>
+              {/* <button type="button" onClick={logoutUser}>
                 <Link to="/">Logout</Link>
-              </button>
+              </button> */}
             </div>
           </form>
         </fieldset>

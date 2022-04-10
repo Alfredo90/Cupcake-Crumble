@@ -15,6 +15,7 @@ const values  = {
   "30": "30px",
   "32": "32px",
   "36": "36px",
+  "38": "38px",
   "40": "40px",
   "48": "48px",
   "56": "56px",
@@ -68,6 +69,7 @@ module.exports = {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
+      amber: colors.amber,
       black: colors.black,
       slate: colors.slate,
       white: colors.white,
@@ -76,17 +78,22 @@ module.exports = {
       blue: colors.blue,
       cyan: colors.cyan,
       indigo: colors.indigo,
+      teal: colors.teal,
       yellow: colors.yellow,
       violet: colors.violet,
+      pink: colors.pink,
       purple: colors.purple,
-      pink: colors.fuchsia,
+      orange: colors.orange,
+      sky: colors.sky,
+      fuchisa: colors.fuchsia,
       rose: colors.rose
     },
     extend: {
       fontFamily: {
         'proxima-nova': ["Proxima Nova"],
         'salt': ['Rock salt', 'cursive'], 
-        'lily': ['Lily Script One', 'cursive']               
+        'lily': ['Lily Script One', 'cursive'],
+        'ceviche': ['Ceviche One' ],              
       },
       width: values,
       height: values,

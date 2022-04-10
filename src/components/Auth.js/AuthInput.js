@@ -12,10 +12,10 @@ const AuthInput = ({ inputData: { label, type, name, placeholder },userInfo,setU
   };
 
   return (
-    <label>
+    <label className=" flex flex-col font-medium text-lg">
       {label}
       <input 
-        className="flex flex-col items-center justify-center p-10 "
+        className="rounded-lg  text-lg  p-10 border-2 hover:border-black "
         type={type}
         name={nameFixed}
         placeholder={placeholder ? placeholder : type}

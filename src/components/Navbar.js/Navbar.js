@@ -7,20 +7,20 @@ const Navbar = () => {
   
   return (
     <div className="flex justify-between items-center border-2  p-6 relative ">
-      <h1 className="font-lily text-36 text-green-500 font-semibold pl-20 ">
+      <h1 className="font-lily text-36 text-teal-600  italic font-semibold pl-20 ">
         <Link to="/">Cupcake Crumble</Link>
       </h1>
       <div>
-        <ul className="flex items-center gap-30 font-proxima-nova pr-20  text-lg font-medium ">
-          <Link to="/menu">
+        <ul className="flex items-center gap-30 font-proxima-nova pr-20  text-lg font-medium  ">
+          <Link to="/menu" className="hover:text-sky-600">
             <li>Menu</li>
           </Link>
-          <li>About</li>
-          <li>Service</li>
-          <Link to="/cart">
+          <li className="hover:text-orange-600">About</li>
+          <li className="hover:text-indigo-600">Service</li>
+          <Link to="/cart" className="hover:text-rose-600">
             <CartIcon />
           </Link>
-          <Link to="/auth">
+          <Link to="/auth" className="hover:text-green-500">
             <UserIcon />
           </Link>
         </ul>
