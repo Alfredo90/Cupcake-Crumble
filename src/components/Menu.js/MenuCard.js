@@ -10,7 +10,7 @@ const MenuCard = ({ cupcake: {cupcake_id, img, title, description, price }, addT
           <h2 className=" font-medium text-xl italic font-lily text-amber-600">{title}</h2>
           <p className="text-teal-600 text-xl font-bold ">${price}</p>
         </div>
-        <div className="flex justify-center items-stretch font-medium h-200  text-left mx-2.5  pt-20 ">
+        <div className="flex justify-center items-stretch font-medium h-200  text-left mx-5 pt-20 ">
           <p>{description}</p>
         </div>
         <div className="flex items-center justify-end ">

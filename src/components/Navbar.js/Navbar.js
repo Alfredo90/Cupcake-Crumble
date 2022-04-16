@@ -6,8 +6,8 @@ const Navbar = () => {
 
   
   return (
-    <div className="flex justify-between items-center border-2  p-6 relative ">
-      <h1 className="font-lily text-36 text-teal-600  italic font-semibold pl-20 ">
+    <div className="flex justify-between items-center border-2 ">
+      <h1 className="font-lily text-48  text-teal-600  italic font-bold pl-20 ">
         <Link to="/">Cupcake Crumble</Link>
       </h1>
       <div>

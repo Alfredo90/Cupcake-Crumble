@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { ReactComponent as DeleteIcon }from '../../assets/deleteIcon.svg'
 
 //Destructuring props in CartItem component
 const CartItem = ({cart_id, img, price, quantity, title, deleteItemFromCart, updateCupcakeQuantity}) => {
@@ -17,12 +18,11 @@ const CartItem = ({cart_id, img, price, quantity, title, deleteItemFromCart, upd
     setSelectTagValue(quantity);
     updateCupcakeQuantity(cart_id, quantity);
   };
-//return the destructure props i passed to create the items in my car and also dynamically mapping the quantity in my cart.
   return (
     <li className='border w-300 h-300 rounded-md my-4'>
       <img src={img} alt={title} className="w-200 h-200" />
       <p>${price * quantity}</p>
-      <input className='bg-rose-500 shadow rounded-sm p-2' type="button" onClick={deleteItemFromCart.bind(null, cart_id)} value="Remove" />
+      <button type="button" onClick={deleteItemFromCart.bind(null, cart_id)} value="Remove" > <DeleteIcon/></button>
       <div>
         <label htmlFor="quantity">Qty:</label>
         <select id="quantity" defaultValue={selectTagValue} onChange={quantityHandler}>
