@@ -5,6 +5,7 @@ import {Link} from "react-router-dom"
 
 const Cart = () => {
   const [cart, setCart] = useState([]);
+  
 
 
 //Making api request to retrieve data for Cart
@@ -42,7 +43,7 @@ const Cart = () => {
           {...props}
         />
       ))}
-      <Link to="/billingForm"><button>Checkout</button></Link>
+      <Link to="/billingForm">Checkout</Link>
     </ul>
   );
 };

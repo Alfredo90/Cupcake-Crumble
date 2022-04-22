@@ -2,12 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import AuthInput from "./AuthInput";
-import {
-  selectIsNewUser,
-  changeIsNewUser,
-  login,
-  logout,
-} from "../../redux/slices/userSlice";
+import { selectIsNewUser, changeIsNewUser, login, logout } from "../../redux/slices/userSlice";
 
 const Auth = () => {
   const isNewUser = useSelector(selectIsNewUser);
@@ -39,7 +34,7 @@ const Auth = () => {
   return (
 
       <div className="items-center justify-center flex flex-row  h-100vh w-100wh mx-auto  ">
-        <fieldset className="border-2 border-gray-300  rounded-2xl p-3 w-400 h-400 flex flex-col justify-center items-center shadow-xl  ">
+        <fieldset className="border-2 border-gray-300  rounded-2xl p-3 w-600 h-600 flex flex-col justify-center items-center shadow-xl shadow-green-500  ">
           <legend className="text-black font-medium text-32  font-proxima-nova ">{isNewUser ? "Signup" : "Login"}</legend>
           <form onSubmit={submitHandler}>
             {inputsToMap.map((inputData) => (
@@ -55,11 +50,12 @@ const Auth = () => {
                 type="button"
                 value={ isNewUser ? "Already have an account?" : "Need an account?" }
                 onClick={toggleIsNewUser}
-                className=" font-medium hover:text-teal-600"
+                className=" font-medium hover:text-orange-600"
               />
               <button 
               type="submit"
-              className="font-medium border-2 text-white bg-teal-600 px-10 py-2 rounded-md"
+              className=" font-medium border-2 text-white bg-teal-600 px-10 py-4 rounded-md"
+              disabled={!isNewUser}
               >{isNewUser ? "Signup" : "Login"}</button>
               {/* <button type="button" onClick={logoutUser}>
                 <Link to="/">Logout</Link>

@@ -28,7 +28,7 @@ const BillingForm = () => {
 
   const billingHandler = e => setBillingValues({...billingValues, [e.target.name]: e.target.value})
   return(
-    <form onSubmit={handleSubmit} className="flex align-items justify-content">
+    <form onSubmit={handleSubmit} >
             <fieldset>
                 <legend>Billing</legend>
                 <label>

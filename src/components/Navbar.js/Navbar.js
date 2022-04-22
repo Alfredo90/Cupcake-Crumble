@@ -7,7 +7,7 @@ const Navbar = () => {
   
   return (
     <div className="flex justify-between items-center border-2 ">
-      <h1 className="font-lily text-48  text-teal-600  italic font-bold pl-20 ">
+      <h1 className="font-lily text-40  text-teal-600  italic font-bold pl-20 ">
         <Link to="/">Cupcake Crumble</Link>
       </h1>
       <div>
