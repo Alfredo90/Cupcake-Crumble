@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import CartItem from "./CartItem";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
+import EmptyCart from "./EmptyCart";
 
 const Cart = () => {
   const [cart, setCart] = useState([]);
-  
 
+  const cartEmpty = cart.length === 0;
 
-//Making api request to retrieve data for Cart
+  //Making api request to retrieve data for Cart
   useEffect(() => {
     axios
       .get("/cart")
@@ -30,21 +31,27 @@ const Cart = () => {
       .catch(console.error);
   };
 
-//Mapping state and passing props to CartItem component
-// passing update and delete function through props to the CartItem component
-//when user clicks on checkout button, it will redirect them to the Billing form page.
+  //Mapping state and passing props to CartItem component
+  // passing update and delete function through props to the CartItem component
+  //when user clicks on checkout button, it will redirect them to the Billing form page.
   return (
-    <ul className="flex flex-col flex-wrap border-2">
-      {cart.map((props) => (
-        <CartItem
-          key={props.cart_id}
-          deleteItemFromCart={deleteItemFromCart}
-          updateCupcakeQuantity={updateCupcakeQuantity}
-          {...props}
-        />
-      ))}
-      <Link to="/billingForm">Checkout</Link>
-    </ul>
+    <>
+      {cartEmpty ? (
+        <EmptyCart />
+      ) : (
+        <ul className="flex flex-col flex-wrap border-2">
+          {cart.map((props) => (
+            <CartItem
+              key={props.cart_id}
+              deleteItemFromCart={deleteItemFromCart}
+              updateCupcakeQuantity={updateCupcakeQuantity}
+              {...props}
+            />
+          ))}
+          <Link to="/billingForm">Checkout</Link>
+        </ul>
+      )}
+    </>
   );
 };
 

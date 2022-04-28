@@ -54,5 +54,5 @@ export const userSlice = createSlice({
 export const { changeIsNewUser } = userSlice.actions
 
 export const selectIsNewUser = state => state.user.isNewUser
-
+export const selectUserState = state => state.user
 export default userSlice.reducer

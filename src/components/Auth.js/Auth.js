@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import AuthInput from "./AuthInput";
-import { selectIsNewUser, changeIsNewUser, login, logout } from "../../redux/slices/userSlice";
+import { selectIsNewUser, changeIsNewUser, login } from "../../redux/slices/userSlice";
 
 const Auth = () => {
   const isNewUser = useSelector(selectIsNewUser);
@@ -27,9 +26,6 @@ const Auth = () => {
     dispatch(login(userInfo));
     setUserInfo({ username: "", email: "", password: "" });
   };
-  // const logoutUser = () => {
-  //   dispatch(logout());
-  // };
 
   return (
 
@@ -55,17 +51,13 @@ const Auth = () => {
               <button 
               type="submit"
               className=" font-medium border-2 text-white bg-teal-600 px-10 py-4 rounded-md"
-              disabled={!isNewUser}
               >{isNewUser ? "Signup" : "Login"}</button>
-              {/* <button type="button" onClick={logoutUser}>
-                <Link to="/">Logout</Link>
-              </button> */}
             </div>
           </form>
         </fieldset>
       </div>
-   
   );
 };
 
 export default Auth;
+   
