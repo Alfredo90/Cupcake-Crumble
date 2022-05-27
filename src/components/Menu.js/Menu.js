@@ -37,6 +37,8 @@ const Menu = ( ) => {
             key={cupcake.cupcake_id}
             cupcake={cupcake}
             addToCart={addToCart}
+            isLoading={isLoading}
+            error={error}
           />
         ))}
       </ul>
