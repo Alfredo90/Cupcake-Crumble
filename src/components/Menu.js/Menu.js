@@ -4,18 +4,20 @@ import { useState, useEffect } from "react";
 
 const Menu = ( ) => {
   const [products, setProduct] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+  // const [isLoading, setIsLoading] = useState(true);
+  // const [error, setError] = useState(null);
 //making an api request to retrieve data for products
   useEffect(() => {
-    setIsLoading(true)
+    // setIsLoading(true)
     axios
       .get('/cupcakes')
       .then(({ data }) => {
         setProduct(data);
-        setIsLoading(false);
+        // setIsLoading(false);
       })
-      .catch(setError);
+      .catch((err) => {
+        console.log(err)
+      });
   }, []);
   //Create a function making a api request to add item to user's cart
   const addToCart = (cupcakeId) => {
@@ -37,8 +39,6 @@ const Menu = ( ) => {
             key={cupcake.cupcake_id}
             cupcake={cupcake}
             addToCart={addToCart}
-            isLoading={isLoading}
-            error={error}
           />
         ))}
       </ul>
