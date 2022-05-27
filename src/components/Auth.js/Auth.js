@@ -30,7 +30,7 @@ const Auth = () => {
   return (
 
       <div className="items-center justify-center flex flex-row  h-100vh w-100wh mx-auto  ">
-        <fieldset className="border-2 border-gray-300  rounded-2xl p-3 w-600 h-600 flex flex-col justify-center items-center shadow-xl shadow-green-500  ">
+        <fieldset className="rounded-2xl p-3 w-600 h-600 flex flex-col justify-center items-center shadow-2xl shadow-gray-500/50 border border-gray-200    ">
           <legend className="text-black font-medium text-32  font-proxima-nova ">{isNewUser ? "Signup" : "Login"}</legend>
           <form onSubmit={submitHandler}>
             {inputsToMap.map((inputData) => (
@@ -46,11 +46,11 @@ const Auth = () => {
                 type="button"
                 value={ isNewUser ? "Already have an account?" : "Need an account?" }
                 onClick={toggleIsNewUser}
-                className=" font-medium hover:text-orange-600"
+                className=" font-medium hover:text-orange-600 cursor-pointer"
               />
               <button 
               type="submit"
-              className=" font-medium border-2 text-white bg-teal-600 px-10 py-4 rounded-md"
+              className=" font-medium text-white bg-teal-600  hover:bg-teal-700 px-10 py-4 rounded-sm "
               >{isNewUser ? "Signup" : "Login"}</button>
             </div>
           </form>

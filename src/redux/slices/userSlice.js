@@ -21,7 +21,8 @@ export const login = createAsyncThunk('user/login', async (userCredentials, thun
 })
 
 export const logout = createAsyncThunk("user/logout", async () => {
-  await axios.post('/auth/logout')
+  await axios.post('/auth/logout') && window.location.reload()
+  
 })
 
 export const userSlice = createSlice({ 

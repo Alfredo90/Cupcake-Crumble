@@ -2,7 +2,7 @@ import axios from "axios";
 import MenuCard from "./MenuCard";
 import { useState, useEffect } from "react";
 
-const Menu = () => {
+const Menu = ( ) => {
   const [products, setProduct] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);

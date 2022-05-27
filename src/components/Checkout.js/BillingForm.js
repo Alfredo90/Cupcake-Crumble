@@ -12,8 +12,8 @@ const BillingForm = () => {
     zipCode: "",
   });
   
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
   };
 
   const usStates = useMemo(() => [
@@ -28,9 +28,9 @@ const BillingForm = () => {
 
   const billingHandler = e => setBillingValues({...billingValues, [e.target.name]: e.target.value})
   return(
-    <form onSubmit={handleSubmit} >
-            <fieldset>
-                <legend>Billing</legend>
+    <form onSubmit={handleSubmit} className="border-2 mt-40 justify-center items-center mx-auto shadow-lg w-half h-full rounded-lg" >
+            <fieldset className="flex flex-col justify-center items-center w-200 h-full m-20">
+                <legend className="text-2xl ">Billing Information</legend>
                 <label>
                     First Name
                     <input type="text" name="firstName"  required autoComplete="given-name" onChange={billingHandler}/>

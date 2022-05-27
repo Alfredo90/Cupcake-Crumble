@@ -15,7 +15,7 @@ const Cart = () => {
       .get("/cart")
       .then(({ data }) => setCart(data))
       .catch(console.error);
-  }, []);
+  }, [setCart]);
   //Making api request to update or add item to Cart
   const updateCupcakeQuantity = (cartId, quantity) => {
     axios

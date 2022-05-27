@@ -9,32 +9,29 @@
     "ext": "js, json, sql"
   },
   "dependencies": {
-    "@craco/craco": "^6.4.3",
     "@reduxjs/toolkit": "^1.7.1",
     "@stripe/react-stripe-js": "^1.7.0",
     "@stripe/stripe-js": "^1.24.0",
-    "autoprefixer": "^9.8.8",
     "axios": "^0.24.0",
     "bcryptjs": "^2.4.3",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "massive": "^6.10.2",
-    "nodemon": "^2.0.15",
-    "postcss": "^7.0.39",
+    "nodemon": "^2.0.16",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^5.0.0",
     "redux": "^4.1.2",
     "redux-promise-middleware": "^6.1.2",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
+    "stripe": "^8.222.0"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -55,5 +52,10 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "autoprefixer": "^9.8.8",
+    "postcss": "^8.4.13",
+    "react-error-overlay": "^6.0.9",
+    "tailwindcss": "^3.0.24"
+  }
 }

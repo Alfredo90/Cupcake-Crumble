@@ -60,9 +60,7 @@ const values  = {
 }
 const colors = require('tailwindcss/colors')
 module.exports = {
-  // mode: "jit",
-  purge: ['./src/**/**/*.js', './public/index.html'],
-  darkMode: "media",
+  content: ['./src/**/**/*.js', './public/index.html'],
   theme: {
     screens: {
       sm: '480px',
@@ -118,10 +116,6 @@ module.exports = {
 
     }
    
-  },
-  variants: {
-    display:['group-hover'],
-    extend: {},
   },
   plugins: [],
 }
