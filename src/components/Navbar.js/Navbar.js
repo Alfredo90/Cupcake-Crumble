@@ -1,26 +1,37 @@
-// import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import LogoutButton from "../LogoutButton.js/LogoutButton";
 import { useSelector } from "react-redux";
 import { selectUserState } from "../../redux/slices/userSlice";
 import { ReactComponent as UserIcon } from "../../assets/userIcon.svg";
 import { ReactComponent as CartIcon } from "../../assets/cartIcon.svg";
+import HamburgerMenu  from "../SideMenu.js/HamburgerMenu";
+import SideMenu from "../SideMenu.js/SideMenu";
 
 const Navbar = () => {
+  const [isSidebar, setIsSidebar] = useState(false);
   const { isUserLoggedIn, user } = useSelector(selectUserState);
 
   const handleClick = (e) => {
     const el = document.getElementById(`${e.target.id}-section`);
     el.scrollIntoView({ behavior: "smooth" });
   };
+  const showSidebar = () => setIsSidebar(!isSidebar);
 
   return (
-    <nav className="relative flex items-center justify-between p-6 border-2 ">
-      <h1 className="pl-20 italic font-semibold text-teal-600 font-lily text-36 ">
+    <nav className="relative flex items-center justify-between w-100vw h-56  lg:h-56 lg:w-full sm:w-full md:w-full   ">
+      <h1 className="  italic font-semibold text-teal-600 font-lily lg:text-4xl p-6 sm:text-2xl">
         <Link to="/">Cupcake Crumble</Link>
       </h1>
+      <div className=" w-100vw h-full absolute lg:invisible sm:visible  ">
+        {isSidebar ? (
+          <SideMenu showSidebar={showSidebar} />
+        ) : (
+          <HamburgerMenu showSidebar={showSidebar} />
+        )}
+      </div>
 
-      <ul className="flex items-center pr-20 text-lg font-medium gap-30 font-proxima-nova ">
+      <ul className="flex items-center p-6  text-lg font-medium gap-30 font-proxima-nova invisible sm:invisible md:invisible lg:visible ">
         <li>
           <Link to="/menu" className="hover:text-sky-600">
             Menu

@@ -1,16 +1,15 @@
 import { Elements } from "@stripe/react-stripe-js"
 import { loadStripe } from "@stripe/stripe-js"
-import React from "react"
 import Checkout from "./Checkout"
 
 
-const PUBLIC_KEY = "pk_test_rgWMA3zxjAtwaB6iV8b5W40x"
+// const PUBLIC_KEY = "pk_test_rgWMA3zxjAtwaB6iV8b5W40x"
 
-const stripeTestPromise = loadStripe(PUBLIC_KEY)
+const stripeTestPromise = loadStripe("pk_test_rgWMA3zxjAtwaB6iV8b5W40x")
 
-export default function StripeContainer() {
+ function StripeContainer() {
 	const options = {
-		clientSecret:process.env.STRIPE_KEY
+		clientSecret:'{{CLIENT_SECRET}}',
 	}
 	console.log("OPTIONS", options )
 	return (
@@ -19,3 +18,4 @@ export default function StripeContainer() {
 		</Elements>
 	)
 }
+export default StripeContainer

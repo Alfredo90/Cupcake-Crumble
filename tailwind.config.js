@@ -43,12 +43,14 @@ const values  = {
   "338": "338px",
   "350": "350px",
   "384": "384px",
+  "390": "390px",
   "400": "400px",
   "420": "420px",
   "480": "480px",
   "500": "500px",
   "513": "513px",
   "560": "560px",
+  "576": "576px",
   "600": "600px",
   "640": "640px",
   "675": "675px",
@@ -62,11 +64,17 @@ const colors = require('tailwindcss/colors')
 module.exports = {
   content: ['./src/**/**/*.js', './public/index.html'],
   theme: {
-    screens: {
-      sm: '480px',
-      md: '768px',
-      lg: '976px',
-      xl: '1440px',
+    theme: {
+      screens: {
+        'sm': '390px',
+        // => @media (min-width: 576px) { ... }
+  
+        'md': '960px',
+        // => @media (min-width: 960px) { ... }
+  
+        'lg': '1440px',
+        // => @media (min-width: 1440px) { ... }
+      },
     },
     colors: {
       transparent: 'transparent',

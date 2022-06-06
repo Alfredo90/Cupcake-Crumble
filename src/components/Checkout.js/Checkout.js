@@ -10,7 +10,7 @@ export default function Checkout() {
     e.preventDefault();
 
     const result = await stripe.confirmCardPayment({
-      elements,
+      CardElement,
       confirmParams: {
         return_url: 'https://localhost:3000'
       },

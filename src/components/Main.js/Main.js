@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 const Main = () => {
   return (
     <div className=" w-full h-full flex flex-col justify-content align-items gap-10 ">
-      <section className="bg-pic-one w-full h-500 bg-cover bg-no-repeat bg-center mix-blend-screen contrast-90  ">
+      <section className="bg-pic-one w-full h-500 bg-cover bg-no-repeat bg-center mix-blend-screen contrast-90 rounded-sm ">
         <Link to="/menu">
           <button className="flex justify-center p-5 align-items mx-auto mt-250 text-white text-lg border-2 bg-orange-600 hover:bg-orange-500 font-proxima-nova rounded-md font-semibold transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
             Shop Now
@@ -11,9 +11,9 @@ const Main = () => {
       </section>
       <section
         id="about-section"
-        className=" bg-pic-two w-full h-500 bg-cover flex flex-col  bg-no-repeat  contrast-75"
+        className=" bg-pic-two w-full h-500 bg-cover flex flex-col  bg-no-repeat  contrast-75 rounded-sm "
       >
-        <h1 className="text-green-600 text-40 justify-center  items-center mx-auto my-20 font-lily font-semibold ">
+        <h1 className="text-green-600 text-40 justify-center items-center mx-auto my-20 font-lily font-semibold ">
           About
         </h1>
         <p className=" font-proxima-nova font-medium italic text-white text-center justify-center items-center mx-auto text-24 mt-10 tracking-wide leading-relaxed w-half h-half">
@@ -28,7 +28,7 @@ const Main = () => {
       </section>
       <section
         id="service-section"
-        className="bg-pic-three w-full h-500 bg-cover flex flex-col bg-no-repeat  "
+        className="bg-pic-three w-full h-500 bg-cover flex flex-col bg-no-repeat rounded-sm  "
       >
         <h1 className="text-orange-500 text-40 justify-center items-center mx-auto my-20 font-lily font-semibold ">
           Service
