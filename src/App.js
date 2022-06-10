@@ -6,19 +6,19 @@ import Auth from "./components/Auth.js/Auth";
 import Cart from "./components/Cart.js/Cart";
 import Menu from "./components/Menu.js/Menu";
 import Checkout from "./components/Checkout.js/StripeContainer";
-import SideMenu from "./components/SideMenu.js/SideMenu";
+
 
 const App = () => {
   return (
     <>
       <Navbar />
       <Routes>
-        {/* <Route path="/" element={<Main />} />
+        <Route path="/" element={<Main />} />
         <Route path="auth" element={<Auth />} />
         <Route path="menu" element={<Menu />} />
         <Route path="cart" element={<Cart />} />
         <Route path="billingForm" element={<BillingForm />} />
-        <Route path="checkout" element={<Checkout />} /> */}
+        <Route path="checkout" element={<Checkout />} />
       </Routes>
     </>
   );

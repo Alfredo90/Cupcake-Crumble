@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 const Main = () => {
   return (
-    <div className=" w-full h-full flex flex-col justify-content align-items gap-10 ">
-      <section className="bg-pic-one w-full h-500 bg-cover bg-no-repeat bg-center mix-blend-screen contrast-90 rounded-sm ">
+    <div className="  w-full h-full flex flex-col justify-content align-items">
+      <section className="bg-pic-one w-full h-500 bg-cover bg-no-repeat bg-center contrast-90 rounded-sm ">
         <Link to="/menu">
           <button className="flex justify-center p-5 align-items mx-auto mt-250 text-white text-lg border-2 bg-orange-600 hover:bg-orange-500 font-proxima-nova rounded-md font-semibold transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
             Shop Now

@@ -30,8 +30,8 @@ const Auth = () => {
   return (
 
       <div className="items-center justify-center flex flex-row  h-100vh w-100wh mx-auto  ">
-        <fieldset className="rounded-2xl p-3 w-600 h-600 flex flex-col justify-center items-center shadow-2xl shadow-gray-500/50 border border-gray-200    ">
-          <legend className="text-black font-medium text-32  font-proxima-nova ">{isNewUser ? "Signup" : "Login"}</legend>
+        <fieldset className="sm:w-400 sm:h-400 rounded-2xl lg:p-3 sm:p-10 lg:w-600 lg:h-600 flex flex-col justify-center items-center shadow-2xl shadow-gray-500/50 border border-gray-200    ">
+          <legend className="text-black font-medium lg:text-30 sm:text-xl  font-proxima-nova ">{isNewUser ? "Signup" : "Login"}</legend>
           <form onSubmit={submitHandler}>
             {inputsToMap.map((inputData) => (
               <AuthInput

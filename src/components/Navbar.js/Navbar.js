@@ -19,17 +19,17 @@ const Navbar = () => {
   const showSidebar = () => setIsSidebar(!isSidebar);
 
   return (
-    <nav className="relative flex items-center justify-between w-100vw h-56  lg:h-56 lg:w-full sm:w-full md:w-full   ">
+    <nav className="relative flex items-center justify-between w-100vw h-full  lg:h-56 lg:w-full sm:w-full md:w-full   ">
       <h1 className="  italic font-semibold text-teal-600 font-lily lg:text-4xl p-6 sm:text-2xl">
         <Link to="/">Cupcake Crumble</Link>
       </h1>
-      <div className=" w-100vw h-full absolute lg:invisible sm:visible  ">
+      <div className="w-100vw h-full absolute lg:invisible sm:visible ">
         {isSidebar ? (
-          <SideMenu showSidebar={showSidebar} />
-        ) : (
+          <SideMenu showSidebar={showSidebar} /> 
+     ): ( 
           <HamburgerMenu showSidebar={showSidebar} />
-        )}
-      </div>
+      
+     )}</div>
 
       <ul className="flex items-center p-6  text-lg font-medium gap-30 font-proxima-nova invisible sm:invisible md:invisible lg:visible ">
         <li>
