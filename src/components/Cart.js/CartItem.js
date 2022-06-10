@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ReactComponent as DeleteIcon }from '../../assets/deleteIcon.svg'
+// import { ReactComponent as DeleteIcon }from '../../assets/deleteIcon.svg'
 
 //Destructuring props in CartItem component
 const CartItem = ({cart_id, img, price, quantity, title, deleteItemFromCart, updateCupcakeQuantity}) => {
