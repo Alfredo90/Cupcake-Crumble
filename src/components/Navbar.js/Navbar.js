@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import LogoutButton from "../LogoutButton.js/LogoutButton";
 import { useSelector } from "react-redux";
 import { selectUserState } from "../../redux/slices/userSlice";
-import { ReactComponent as UserIcon } from "../../assets/userIcon.svg";
-import { ReactComponent as CartIcon } from "../../assets/cartIcon.svg";
+// import { ReactComponent as UserIcon } from "../../assets/userIcon.svg";
+// import { ReactComponent as CartIcon } from "../../assets/cartIcon.svg";
 import HamburgerMenu  from "../SideMenu.js/HamburgerMenu";
 import SideMenu from "../SideMenu.js/SideMenu";
 
