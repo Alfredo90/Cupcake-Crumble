@@ -15,7 +15,7 @@ const AuthInput = ({ inputData: { label, type, name, placeholder },userInfo,setU
     <label className=" flex flex-col font-medium text-lg ">
       {label}
       <input 
-        className="placeholder:italic placeholder:text-slate-400 block border-2 border-slate-300 rounded-lg p-6 shadow-sm focus:outline-none focus:border-teal-600 focus:ring-teal-600 focus:ring-1 text-lg"
+        className="placeholder:italic placeholder:text-slate-400 block border-2 border-slate-300 rounded-lg p-6 shadow-sm focus:outline-none caret-teal-700 focus:border-teal-600 focus:ring-teal-600 focus:ring-1 text-lg"
         type={type}
         name={nameFixed}
         placeholder={placeholder ? placeholder : type}

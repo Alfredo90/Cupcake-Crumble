@@ -16,7 +16,7 @@ const Main = () => {
         <h1 className="text-green-600 text-40 justify-center items-center mx-auto my-20 font-lily font-semibold ">
           About
         </h1>
-        <p className=" font-proxima-nova font-medium italic text-white text-center justify-center items-center mx-auto text-24 mt-10 tracking-wide leading-relaxed w-half h-half">
+        <p className=" font-proxima-nova font-medium italic text-white text-center justify-center items-center mx-auto sm:text-12 lg:text-24 mt-10 lg:tracking-wide lg:leading-relaxed lg:w-half lg:h-half sm:h-full sm:w-half ">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed dolor
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -33,7 +33,7 @@ const Main = () => {
         <h1 className="text-orange-500 text-40 justify-center items-center mx-auto my-20 font-lily font-semibold ">
           Service
         </h1>
-        <p className="font-proxima-nova font-medium italic text-white text-center justify-center items-center mx-auto text-24 mt-10 tracking-wide leading-relaxed w-half h-half ">
+        <p className="font-proxima-nova font-medium italic text-white text-center justify-center items-center mx-auto sm:text-12 lg:text-24 mt-10 lg:tracking-wide lg:leading-relaxed lg:w-half lg:h-half sm:h-full sm:w-full  ">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed dolor
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
