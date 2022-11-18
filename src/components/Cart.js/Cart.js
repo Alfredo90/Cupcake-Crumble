@@ -18,6 +18,7 @@ const Cart = () => {
   }, [setCart]);
   //Making api request to update or add item to Cart
   const updateCupcakeQuantity = (cartId, quantity) => {
+    console.log(cartId)
     axios
       .put(`/cart/${cartId}`, { quantity })
       .then((res) => setCart(res.data))
@@ -40,7 +41,7 @@ const Cart = () => {
         <EmptyCart />
       ) : (
         <ul className="flex flex-col flex-wrap border-2">
-          {cart.map((props) => (
+          {cart?.map((props) => ( 
             <CartItem
               key={props.cart_id}
               deleteItemFromCart={deleteItemFromCart}

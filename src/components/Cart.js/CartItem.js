@@ -3,15 +3,15 @@ import { useState } from 'react'
 
 //Destructuring props in CartItem component
 const CartItem = ({cart_id, img, price, quantity, title, deleteItemFromCart, updateCupcakeQuantity}) => {
-  const [selectTagValue, setSelectTagValue] = useState(quantity)
+  const [selectTagValue, setSelectTagValue] = useState(quantity);
   //array.from creates a new, shallow-copied Array instance from an array-like or iterable object.
   //array.keys method returns a new Array Iterator object that contains the keys for each index in the array.
   //A dynamic way of making an array of keys for my quantity .
-  const quantityArr = Array.from(Array(10).keys()).map(num => ({
+  const quantityArr = Array.from(Array(10).keys()).map((num) => ({
     key: `cupcakeQuantity:${num}`,
-    optionQuantity: num + 1
-  }))
-//function that handles the quantity of the items in the cart
+    optionQuantity: num + 1,
+  }));
+  //function that handles the quantity of the items in the cart
   const quantityHandler = (e) => {
     const quantity = e.target.value;
 
@@ -28,7 +28,18 @@ const CartItem = ({cart_id, img, price, quantity, title, deleteItemFromCart, upd
         value="Remove"
       >
         {/* <DeleteIcon /> */}
-        <svg class="w-30 h-38 fill-rose-600 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z" clip-rule="evenodd"></path></svg>
+        <svg
+          class="w-30 h-38 fill-rose-600 "
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
       </button>
       <div>
         <label htmlFor="quantity">Qty:</label>

@@ -1,10 +1,9 @@
 
-import React from 'react'
 
 const EmptyCart = () => {
   return (
-    <p>Cart Is Empty</p>
-  )
-}
+    <p className="flex items-center justify-center">Oooops! Cart Is Empty </p>
+  );
+};
 
-export default EmptyCart
+export default EmptyCart;
